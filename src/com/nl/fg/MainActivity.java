@@ -13,5 +13,26 @@ public class MainActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+		
+		String[] companies = new String[] { "Google", "Apple", "Facebook",
+        	"Blackberry", "Samsung", "Twitter", "Intel", "HTC", "Asus" };
+
+        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, companies);
+        ListView listView = (ListView) findViewById(R.id.mainListView1);
+		listView.setAdapter(adapter);
     }
+	
+
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		// Inflate main_menu.xml 
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_menu, menu);
+		return true;
+	}
 }
+
+
+
+	
